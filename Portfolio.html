@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muneeb Ashraf - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts for a clean font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes pulse-light {
+            0%, 100% { box-shadow: 0 0 10px #8B5CF6, 0 0 20px #8B5CF6; }
+            50% { box-shadow: 0 0 5px #c9d1d9, 0 0 10px #c9d1d9; }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            background-image: radial-gradient(at 0% 0%, #1f2937 0, transparent 50%), radial-gradient(at 100% 100%, #1f2937 0, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .header-bg {
+            background: radial-gradient(ellipse at top, #374151, #1f2937);
+            animation: pulse-light 4s ease-in-out infinite;
+        }
+
+        .section-details {
+            display: grid;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top;
+            transform: translateY(-20px);
+        }
+
+        details[open] .section-details {
+            opacity: 1;
+            max-height: 2000px; /* A large value to accommodate all content */
+            transform: translateY(0);
+        }
+
+        .details-summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .details-summary::marker,
+        .details-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .details-summary:hover .rotate-icon {
+            transform: rotate(90deg);
+        }
+
+        details[open] .rotate-icon {
+            transform: rotate(90deg);
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body class="p-6 md:p-12 lg:p-24">
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto space-y-8">
+
+        <!-- Header Section -->
+        <header class="header-bg p-8 rounded-2xl shadow-xl border border-purple-800 text-center transform transition-all hover:scale-[1.01] duration-300">
+            <img src="https://placehold.co/150x150/1f2937/d1d5db?text=MA" alt="Profile Picture"
+                class="rounded-full mx-auto border-4 border-purple-500 mb-4 transform transition-all hover:rotate-6 duration-300">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2">Muneeb Ashraf</h1>
+            <p class="text-xl text-purple-400">Aspiring Machine Learning Professional</p>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="bg-gray-900 p-8 rounded-2xl shadow-xl border border-purple-800">
+            <h2 class="text-2xl font-bold text-white mb-4">Professional Summary</h2>
+            <p class="text-gray-300 leading-relaxed">Aspiring Machine Learning professional with a strong academic background in Mathematics and hands-on experience with machine learning models, Python programming, and data analysis. Trained through internships and self-driven coursework in key ML concepts, with completed projects in computer vision, classification, regression, and backend web development. Gained hands-on exposure to object-oriented design, CRUD APIs, and database integration during internships. Eager to contribute to real-world problems and grow within the field of AI and data science.</p>
+        </section>
+
+        <!-- Collapsible Sections -->
+        <div class="space-y-6">
+
+            <!-- Contact Information -->
+            <details class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-purple-800 group transition-all duration-300" open>
+                <summary class="details-summary text-xl font-bold text-white group-hover:text-purple-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-address-card text-purple-500"></i>
+                        <span>Contact Information</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 rotate-icon group-hover:text-white"></i>
+                </summary>
+                <div class="section-details mt-4">
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt text-purple-400"></i>
+                            <span class="text-gray-300">(+92) 3006275648</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-purple-400"></i>
+                            <a href="mailto:muneebashraf.edu@gmail.com" class="text-gray-300 hover:text-purple-300 transition-colors">muneebashraf.edu@gmail.com</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fab fa-linkedin text-purple-400"></i>
+                            <a href="https://linkedin.com/in/muneeb-ashraf-ai" class="text-gray-300 hover:text-purple-300 transition-colors" target="_blank">linkedin.com/in/muneeb-ashraf-ai</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-purple-400"></i>
+                            <span class="text-gray-300">Lahore, Pakistan</span>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Education Section -->
+            <details class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-purple-800 group transition-all duration-300">
+                <summary class="details-summary text-xl font-bold text-white group-hover:text-purple-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-graduation-cap text-purple-500"></i>
+                        <span>Education</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 rotate-icon group-hover:text-white"></i>
+                </summary>
+                <div class="section-details mt-4">
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="text-lg font-semibold text-white">Master of Science (MSc) - Mathematics</h3>
+                            <p class="text-gray-300">Government College University, Lahore, Pakistan</p>
+                            <p class="text-sm text-gray-400">2020 - 2023 | CGPA: 3.37/4.00</p>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="text-lg font-semibold text-white">Bachelor of Science (BSc) - Mathematics and Physics</h3>
+                            <p class="text-gray-300">Government Zamindar Postgraduate College Bhimber Road, Gujrat, Pakistan</p>
+                            <p class="text-sm text-gray-400">2018 - 2020 | Marks: 597/800</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Work Experience Section -->
+            <details class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-purple-800 group transition-all duration-300">
+                <summary class="details-summary text-xl font-bold text-white group-hover:text-purple-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-briefcase text-purple-500"></i>
+                        <span>Work Experience & Internships</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 rotate-icon group-hover:text-white"></i>
+                </summary>
+                <div class="section-details mt-4">
+                    <div class="space-y-6">
+                        <!-- Full-Time Positions -->
+                        <h3 class="text-xl font-semibold text-white">Full-Time Positions</h3>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="text-lg font-medium text-white">Hajveri Lyceum School</h4>
+                            <p class="text-gray-300">Taught grades 5-9, promoted student engagement, simplified complex math topics.</p>
+                            <p class="text-sm text-gray-400">Aug 2023 - May 2025</p>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="text-lg font-medium text-white">Shaudan Tech Group</h4>
+                            <p class="text-gray-300">Delivered reports using visualizations and data summaries as a remote Data Analyst.</p>
+                            <p class="text-sm text-gray-400">Jun 2022 - Sep 2023</p>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="text-lg font-medium text-white">Ali Science Academy</h4>
+                            <p class="text-gray-300">Prepared students for exams with a tailored teaching approach.</p>
+                            <p class="text-sm text-gray-400">Jun 2018 - Mar 2020</p>
+                        </div>
+
+                        <!-- Internships -->
+                        <h3 class="text-xl font-semibold text-white mt-6">Internships</h3>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="text-lg font-medium text-white">Meissasoft</h4>
+                            <p class="text-gray-300">Practiced OOP by building a Chess Game Engine and Ride Sharing Simulation. Solved DSA problems on HackerRank. Designed SQL databases and built a Student Management System using FastAPI and SQLAlchemy.</p>
+                            <p class="text-sm text-gray-400">May 2025 - Present</p>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="text-lg font-medium text-white">InsightSol Technologies</h4>
+                            <p class="text-gray-300">Developed machine learning models using Python libraries as a remote ML Intern.</p>
+                            <p class="text-sm text-gray-400">Apr 2024 - May 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Projects Section -->
+            <details class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-purple-800 group transition-all duration-300">
+                <summary class="details-summary text-xl font-bold text-white group-hover:text-purple-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-folder-open text-purple-500"></i>
+                        <span>Projects</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 rotate-icon group-hover:text-white"></i>
+                </summary>
+                <div class="section-details mt-4">
+                    <div class="space-y-6">
+                        <p class="text-sm text-gray-400 mb-4">Projects completed during my internship at Insightsol Technologies and Meissasoft, as well as through my Artificial Intelligence course.</p>
+                        <ul class="space-y-4">
+                            <li class="border-l-4 border-pink-500 pl-4">
+                                <h4 class="text-lg font-medium text-white">House Price Prediction</h4>
+                                <p class="text-gray-300">Compared 8+ regression models (linear/tree-based) using Python (Scikit-learn, Pandas).</p>
+                            </li>
+                            <li class="border-l-4 border-pink-500 pl-4">
+                                <h4 class="text-lg font-medium text-white">Heart Disease Prediction</h4>
+                                <p class="text-gray-300">Trained 4 classifiers (Logistic Regression, Random Forest) achieving 92% accuracy.</p>
+                            </li>
+                            <li class="border-l-4 border-pink-500 pl-4">
+                                <h4 class="text-lg font-medium text-white">Brain Tumor Detection</h4>
+                                <p class="text-gray-300">CNN model for medical image classification (TensorFlow/Keras).</p>
+                            </li>
+                            <li class="border-l-4 border-pink-500 pl-4">
+                                <h4 class="text-lg font-medium text-white">Student Management System</h4>
+                                <p class="text-gray-300">Created a CRUD-based web app using FastAPI and SQLAlchemy.</p>
+                            </li>
+                             <li class="border-l-4 border-pink-500 pl-4">
+                                <h4 class="text-lg font-medium text-white">Chess Game Engine</h4>
+                                <p class="text-gray-300">Designed a modular OOP-based chess engine in Python.</p>
+                            </li>
+                             <li class="border-l-4 border-pink-500 pl-4">
+                                <h4 class="text-lg font-medium text-white">Ride Sharing Simulation</h4>
+                                <p class="text-gray-300">Simulated a basic Uber-like system using OOP with Driver, Rider, and Ride classes.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Skills Section -->
+            <details class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-purple-800 group transition-all duration-300">
+                <summary class="details-summary text-xl font-bold text-white group-hover:text-purple-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-toolbox text-purple-500"></i>
+                        <span>Skills</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 rotate-icon group-hover:text-white"></i>
+                </summary>
+                <div class="section-details mt-4">
+                    <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Technical Skills</h3>
+                            <ul class="space-y-1 list-disc list-inside">
+                                <li>Python (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow/Keras, NLTK, SQLAlchemy, Alembic)</li>
+                                <li>Machine Learning & Deep Learning</li>
+                                <li>OOP & DSA (Basic)</li>
+                                <li>SQL</li>
+                                <li>FastAPI (Uvicorn, Pydantic)</li>
+                                <li>Anaconda (Jupyter Notebook)</li>
+                                <li>Microsoft Office (Word, PowerPoint)</li>
+                                <li>LaTeX (OverLeaf)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Interpersonal Skills</h3>
+                            <ul class="space-y-1 list-disc list-inside">
+                                <li>Communication</li>
+                                <li>Time Management</li>
+                                <li>Adaptability</li>
+                                <li>Creativity</li>
+                                <li>Leadership</li>
+                                <li>Emotional Intelligence</li>
+                                <li>Canva</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Courses & Certifications -->
+            <details class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-purple-800 group transition-all duration-300">
+                <summary class="details-summary text-xl font-bold text-white group-hover:text-purple-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-award text-purple-500"></i>
+                        <span>Courses & Certifications</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 rotate-icon group-hover:text-white"></i>
+                </summary>
+                <div class="section-details mt-4">
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-sky-500 pl-4">
+                            <h3 class="text-lg font-semibold text-white">Artificial Intelligence (Machine Learning & Deep Learning)</h3>
+                            <p class="text-gray-300">National Vocational and Technical Training Commission, Government of Pakistan</p>
+                            <p class="text-sm text-gray-400">Jun 2023 - Dec 2023</p>
+                        </div>
+                        <div class="border-l-4 border-sky-500 pl-4">
+                            <h3 class="text-lg font-semibold text-white">Coursera Specializations</h3>
+                            <ul class="space-y-1 mt-2">
+                                <li class="text-gray-300">Data Science Math Skills - Duke University</li>
+                                <li class="text-gray-300">Introduction to Discrete Mathematics for Computer Science - UC San Diego</li>
+                                <li class="text-gray-300">Understanding Research Methods - University of London</li>
+                                <li class="text-gray-300">Introduction to Mathematical Thinking - Stanford University</li>
+                                <li class="text-gray-300">Algebra: Elementary to Advanced - Johns Hopkins University</li>
+                                <li class="text-gray-300">Expressway to Data Science: Essential Math - University of Colorado Boulder</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-sky-500 pl-4">
+                            <h3 class="text-lg font-semibold text-white">IELTS Overall Band 7.0 (CEFR Level C1)</h3>
+                            <p class="text-gray-300">Listening 8.0, Writing 6.5, Speaking 6.0, Reading 7.5</p>
+                            <p class="text-sm text-gray-400">Test Date: 16th September 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Languages & Extracurriculars -->
+            <details class="bg-gray-900 p-6 rounded-2xl shadow-lg border border-purple-800 group transition-all duration-300">
+                <summary class="details-summary text-xl font-bold text-white group-hover:text-purple-400">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-globe text-purple-500"></i>
+                        <span>Languages & Activities</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 rotate-icon group-hover:text-white"></i>
+                </summary>
+                <div class="section-details mt-4">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Languages</h3>
+                            <ul class="space-y-1">
+                                <li class="text-gray-300"><strong>Urdu:</strong> C2 (Listening, Reading, Speaking), C1 (Writing)</li>
+                                <li class="text-gray-300"><strong>English:</strong> C1 (Listening, Reading), B2 (Speaking, Writing)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Extracurricular Activities</h3>
+                            <ul class="space-y-2">
+                                <li class="text-gray-300">
+                                    <strong class="text-white">Member - Chawla Mathematics Society</strong>
+                                    <p class="text-gray-400 text-sm">Organized mathematical seminars and workshops.</p>
+                                </li>
+                                <li class="text-gray-300">
+                                    <strong class="text-white">Member - Blood Donor Society</strong>
+                                    <p class="text-gray-400 text-sm">Volunteered in blood donation drives and awareness campaigns.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center text-gray-500">
+        <p>💡 The end of this page could be the start of our collaboration 🚀</p>
+    </footer>
+
+</body>
+</html>
